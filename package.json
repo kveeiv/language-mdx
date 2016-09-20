@@ -1,0 +1,31 @@
+{
+  "author": {
+    "name": "Kevin Vaughan, Intervolve Inc.",
+    "email": "kvaughan@intervolve.com"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/intervolve/language-mdx"
+  },
+  "dependencies": {},
+  "description": "Provides basic syntax highlighting for mdx queries.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.196.0 <2.0.0"
+  },
+  "homepage": "https://bitbucket.org/intervolve/language-mdx",
+  "keywords": [
+    "generic",
+    "configuration",
+    "grammar",
+    "syntax"
+  ],
+  "license": "MIT",
+  "name": "language-mdx",
+  "optionalDependencies": {},
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/intervolve/language-mdx.git"
+  },
+  "version": "0.0.0"
+}

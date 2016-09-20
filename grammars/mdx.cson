@@ -1,0 +1,155 @@
+'scopeName': 'source.mdx'
+'name': 'MDX'
+'fileTypes': [
+    'mdx'
+]
+'patterns': [
+    {
+        'include': '#comments'
+    }
+    {
+        'match': '(?i)\\b(on\\s+\\d+)\\b'
+        'name': 'support.constant.mdx'
+    }
+    {
+        'match': '\\b(\\d+\\.\\d+)|(\\d+\\.)|(\\.\\d+)|\\b(\\d+)\\b'
+        'name': 'constant.numeric.mdx'
+    }
+    {
+        'match': '(?i)\\b(false|null|true)\\b'
+        'name': 'constant.language.mdx'
+    }
+    {
+        'match': '(?i)\\b(with|select|from|where)\\b'
+        'name': 'support.class.mdx'
+    }
+    {
+        'match': '(?i)\\b(as|member|set)\\b'
+        'name': 'support.type.mdx'
+    }
+    {
+        'match': '(?i)\\b(format_string)\\b'
+        'name': 'support.constant.mdx'
+    }
+    {
+        'match': '(?i)\\b(dimension\\s+properties)(.*)\\b'
+        'captures':
+            '1':
+                'name': 'support.constant.mdx'
+            '2':
+                'name': 'entity.other.attribute-name.mdx'
+    }
+    {
+        'match': '(?i)\\b(cell\\s+properties)(.*)'
+        'captures':
+            '1':
+                'name': 'support.constant.mdx'
+            '2':
+                'name': 'entity.other.attribute-name.mdx'
+    }
+    {
+        'match': '(?i)\\b(action|alter|calculate|calculation|calculations|call|case|cell|clear|create|cube|drillthrough|drop|end|existing|global|if|on|refresh|scope|session|subcube|update)\\b'
+        'name': 'entity.name.section.mdx'
+    }
+    {
+        'match': '(?i)\\b(and|is|not|or|xor)\\b'
+        'name': 'keyword.mdx'
+    }
+    {
+        'match': '(?i)\\b(absolute|actionparameterset|addcalculatedmembers|after|aggregate|all|allmembers|ancestor|ancestors|asc|ascendants|average|axis|basc|bdesc|before|before_and_after|bottomcount|bottompercent|bottomsum|by|cache|calculationcurrentpass|calculationpassvalue|cellformulasetlist|chapters|children|closingperiod|coalesceempty|column|columns|correlation|count|cousin|covariance|covariancen|createpropertyset|createvirtualdimension|crossjoin|current|currentcube|currentmember|default_member|defaultmember|desc|descendants|description|dimension|dimensions|distinct|distinctcount|drilldownlevel|drilldownlevelbottom|drilldownleveltop|drilldownmember|drilldownmemberbottom|drilldownmembertop|drilluplevel|drillupmember|empty|error|except|excludeempty|extract|filter|firstchild|firstsibling|for|freeze|generate|group|grouping|head|hidden|hierarchize|hierarchy|ignore|iif|includeempty|index|intersect|isancestor|isempty|isgeneration|isleaf|issibling|item|lag|lastchild|lastperiods|lastsibling|lead|leaves|level|levels|linkmember|linregintercept|linregpoint|linregr2|linregslope|linregvariance|lookupcube|max|measure|median|members|membertostr|min|mtd|name|nametoset|nest|nextmember|no_allocation|no_properties|non|nonemptycrossjoin|not_related_to_facts|openingperiod|pages|parallelperiod|parent|pass|periodstodate|post|predict|prevmember|properties|property|qtd|rank|recursive|relative|rollupchildren|root|rows|sections|self|self_and_after|self_and_before|self_before_after|settoarray|settostr|solve_order|sort|stddev|stddevp|stdev|stdevp|storage|stripcalculatedmembers|strtomember|strtoset|strtotuple|strtoval|strtovalue|subset|sum|tail|this|toggledrillstate|topcount|toppercent|topsum|totals|tree|tupletostr|type|union|unique|uniquename|use|use_equal_allocation|use_weighted_allocation|use_weighted_increment|username|validmeasure|value|var|variance|variancep|varp|visual|visualtotals|wtd|ytd)\\b'
+        'name': 'support.function.general.mdx'
+    }
+    {
+        'include': '#tuples'
+    }
+    {
+        'include': '#sets'
+    }
+    {
+        'include': '#strings'
+    }
+]
+'repository':
+    'comments':
+        'patterns': [
+            {
+                'begin': '--'
+                'captures':
+                    '0':
+                        'name': 'punctuation.definition.comment.mdx'
+                'end': '\\n'
+                'name': 'comment.line.double-dash.mdx'
+            }
+            {
+                'begin': '//'
+                'captures':
+                    '0':
+                        'name': 'punctuation.definition.comment.mdx'
+                'end': '\\n'
+                'name': 'comment.line.double-slash.mdx'
+            }
+            {
+                'begin': '/\\*'
+                'captures':
+                    '0':
+                        'name': 'punctuation.definition.comment.mdx'
+                'end': '\\*/'
+                'name': 'comment.block.c'
+            }
+        ]
+    'string_interpolation':
+        'captures':
+            '1':
+                'name': 'punctuation.definition.string.end.mdx'
+        'match': '(#\\{)([^\\}]*)(\\})'
+        'name': 'string.interpolated.mdx'
+    'strings':
+        'patterns': [
+            {
+                'begin': '"'
+                'beginCaptures':
+                    '0':
+                        'name': 'punctuation.definition.string.begin.mdx'
+                'end': '"'
+                'endCaptures':
+                    '0':
+                        'name': 'punctuation.definition.string.end.mdx'
+                'name': 'string.quoted.double.mdx'
+                'patterns': [
+                    {
+                        'include': '#string_interpolation'
+                    }
+                ]
+            }
+        ]
+    'tuples':
+        'patterns': [
+            {
+                'match': '(\\.?\\&?\\[)([^\\]]*)(\\])'
+                'captures':
+                    '1':
+                        'name': 'constant.character.mdx'
+                    '2':
+                        'name': 'string.quoted.other.brackets.mdx'
+                    '3':
+                        'name': 'constant.character.mdx'
+            }
+        ]
+    'sets':
+        'patterns': [
+            {
+                'begin': '\\{'
+                'beginCaptures':
+                    '0':
+                        'name': 'constant.character.mdx'
+                'end': '\\}'
+                'endCaptures':
+                    '0':
+                        'name': 'constant.character.mdx'
+                'patterns': [
+                    {
+                        'include': '#tuples'
+                    }
+                ]
+            }
+        ]

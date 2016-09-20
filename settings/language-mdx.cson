@@ -1,0 +1,5 @@
+'.source.mdx':
+  'editor':
+    'commentStart': '--'
+    'increaseIndentPattern': '^\\s*(with|member|set|select|from)\\b|\\((?!.*\\))|\\{(?!.*\\})'
+    'decreaseIndentPattern': '^\\s*(\\)|\\})(?!=.*(\\(|\\{))'
