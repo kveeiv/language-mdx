@@ -4,7 +4,7 @@
     "email": "kvaughan@intervolve.com"
   },
   "bugs": {
-    "url": "https://bitbucket.org/intervolve/language-mdx"
+    "url": "https://github.com/kveeiv/language-mdx/issues"
   },
   "dependencies": {},
   "description": "Provides basic syntax highlighting for mdx queries.",
@@ -12,7 +12,7 @@
   "engines": {
     "atom": ">=0.196.0 <2.0.0"
   },
-  "homepage": "https://bitbucket.org/intervolve/language-mdx",
+  "homepage": "https://github.com/kveeiv/language-mdx",
   "keywords": [
     "generic",
     "configuration",
@@ -25,7 +25,7 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/intervolve/language-mdx.git"
+    "url": "https://github.com/kveeiv/language-mdx.git"
   },
   "version": "0.0.0"
 }
